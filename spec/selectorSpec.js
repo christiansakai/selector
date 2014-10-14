@@ -46,6 +46,14 @@ describe("matchFunctionMaker", function() {
     expect(matcher(sampleDivEl)).toEqual(true);
   });
 
+  it("should return a CLASS matching function that returns FALSE if the element does not match the className", function() {
+    var selector = ".photo";
+    var matcher = matchFunctionMaker(selector);
+    var sampleDivEl = document.createElement("DIV");
+    sampleDivEl.className = "photos";
+    expect(matcher(sampleDivEl)).toEqual(false);
+  });
+
   it("should return a CLASS matching function that returns TRUE if the element matches the className, even when there are multiple classes on the element", function() {
     var selector = ".heading";
     var matcher = matchFunctionMaker(selector);
@@ -72,7 +80,7 @@ describe("matchFunctionMaker", function() {
 
 describe("$ selector function", function() {
   var elements;
-  
+
   it("should select one element by id", function() {
     elements = $('#pagetitle');
     expect(elements.length).toEqual(1);
@@ -102,5 +110,5 @@ describe("$ selector function", function() {
     elements = $('h2.small');
     expect(elements.length).toEqual(2);
   });
-  
+
 });
