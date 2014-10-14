@@ -1,3 +1,3 @@
-Answers for Fullstack Academy Test First JavaScript
+Answers for Fullstack Academy Selector.js
 
 Taken from https://github.com/FullstackAcademy/selector.js
